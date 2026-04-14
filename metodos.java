@@ -1,0 +1,42 @@
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class metodos {
+    public LinkedList<objEstudiante> LlenarLista(LinkedList<objEstudiante> l, Scanner sc){
+        boolean continuar = true;
+
+        while (continuar) {
+            objEstudiante o = new objEstudiante();
+            System.out.println("Ingrese nombre del estudiante: ");
+            o.setNombre(sc.next());
+
+            System.out.println("Ingrese el carnet: ");
+            o.setCarnet(sc.next());
+
+            System.out.println("Ingrese la cedula: ");
+            o.setCedula(sc.nextInt());
+
+            l.add(o);
+
+            System.out.println("Desea seguir ingresando 1. Si 2. No");
+            int opt = sc.nextInt();
+
+            if (opt == 2){
+                continuar = false;
+            }
+        }
+
+        return l;
+    }
+
+    public void MostrarLista(LinkedList<objEstudiante> l) {
+        int i = 1;
+        for(objEstudiante o : l) {
+            System.out.println("Indice: " + i);
+            System.out.println("Nombre: " + o.getNombre());
+            System.out.println("Carnet: " + o.getCarnet());
+            System.out.println("Cedula " + o.getCedula());
+            System.out.println("====================================");
+        }
+    }
+}
