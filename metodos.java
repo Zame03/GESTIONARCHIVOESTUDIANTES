@@ -37,6 +37,29 @@ public class metodos {
             System.out.println("Carnet: " + o.getCarnet());
             System.out.println("Cedula " + o.getCedula());
             System.out.println("====================================");
+            i++;
         }
+    }
+
+    public objEstudiante ConsultarEstudiante(int cedula, LinkedList<objEstudiante> l) {
+        objEstudiante o = new objEstudiante();
+
+        for (objEstudiante busqueda : l) {
+            if (busqueda.getCedula() == cedula) {
+                o.setNombre(busqueda.getNombre());
+                o.setCarnet(busqueda.getCarnet());
+                o.setCedula(busqueda.getCedula());
+            }
+        }
+
+        return o;
+    }
+
+    public objEstudiante ModificarEstudiante(int cedula, LinkedList<objEstudiante> l) {
+        objEstudiante o = new objEstudiante();
+
+        
+        
+        return o;
     }
 }

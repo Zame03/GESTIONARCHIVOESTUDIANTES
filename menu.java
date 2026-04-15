@@ -30,7 +30,16 @@ public class menu {
                     break;
 
                 case 2:
-                    m.MostrarLista(lista);
+                    int busqueda = 0;
+                    System.out.println("Ingrese el numero de cedula del estudiante que desea buscar: ");
+                    objEstudiante encontrado = new objEstudiante();
+                    busqueda = sc.nextInt();
+                    encontrado = m.ConsultarEstudiante(busqueda, lista);
+                    
+                    System.out.println(encontrado.getNombre());
+                    System.out.println(encontrado.getCarnet());
+                    System.out.println(encontrado.getCedula());
+                    
                     break;
 
                 case 3:
@@ -42,7 +51,7 @@ public class menu {
                     break;
 
                 case 5:
-                    
+                    m.MostrarLista(lista);
                     break;
 
                 case 6:
@@ -54,6 +63,8 @@ public class menu {
                     break;
 
                 case 8:
+                    continuar = false;
+                    System.out.println("Nos vemos");
                     break; 
             
                 default:
