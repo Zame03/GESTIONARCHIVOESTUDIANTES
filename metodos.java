@@ -55,11 +55,24 @@ public class metodos {
         return o;
     }
 
-    public objEstudiante ModificarEstudiante(int cedula, LinkedList<objEstudiante> l) {
-        objEstudiante o = new objEstudiante();
+    public LinkedList<objEstudiante> ModificarEstudiante(int cedula, LinkedList<objEstudiante> l, Scanner sc) {
+        for (objEstudiante busqueda : l) {
+            if (busqueda.getCedula() == cedula) {
+                System.out.println("Ingrese el nombre ");
+                busqueda.setNombre(sc.next());
+                System.out.println("Ingrese el Carnet ");
+                busqueda.setCarnet(sc.next());
+            } else {
+                System.out.println("Estudiante no encontrado ");
+            }
+        }
+        return l;
+    }
 
-        
-        
-        return o;
+    public LinkedList<objEstudiante> EliminarEstudiante(int cedula, LinkedList<objEstudiante> l, Scanner sc) {
+        l.removeIf(x -> x.getCedula() == cedula);
+        return l;
     }
 }
+
+

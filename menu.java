@@ -43,10 +43,20 @@ public class menu {
                     break;
 
                 case 3:
-                    
+                    int modificado = 0;
+                    System.out.println("Ingrese el numero de cedula del estudiante a modificar: ");
+                    modificado = sc.nextInt();
+
+                    lista = m.ModificarEstudiante(modificado, lista, sc);
+
                     break;
 
                 case 4:
+                    int eliminar = 0;
+                    System.out.println("Ingrese el numero de cedula del estudiante a elminar: ");
+                    eliminar = sc.nextInt();
+
+                    lista = m.EliminarEstudiante(eliminar, lista, sc);
                     
                     break;
 
